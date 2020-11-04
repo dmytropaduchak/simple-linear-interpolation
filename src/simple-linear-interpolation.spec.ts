@@ -61,9 +61,15 @@ describe('src/simple-linear-interpolation.ts', () => {
     }).toThrowError("Can't calculate linear interpolation, please provide more points");
   });
 
-  it('should throw extrapolation error if incorrect matrix incorrect value ', () => {
+  it('should throw extrapolation error if if incorrect value of `x` or `y`', () => {
     expect(() => {
-      linerInterpolation([{ x: 1, y: 1 }])({ z: 1.5 } as any);
+      linerInterpolation(points)({ z: 1.5 } as any);
+    }).toThrowError("Can't calculate linear interpolation");
+  });
+
+  it('should throw extrapolation error if incorrect matrix value', () => {
+    expect(() => {
+      linerInterpolation([{ a: 1 }, { b: 2 }] as any)({ x: 1.5 });
     }).toThrowError("Can't calculate linear interpolation");
   });
 });
