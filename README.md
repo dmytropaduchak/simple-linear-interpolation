@@ -17,8 +17,11 @@ npm i simple-linear-interpolation --save
 
 ## How use
 
-```
-  Simple Schema of Single interpolation
+Simple example JavaScript / TypeScript:
+
+```typescript
+
+/* Linear Interpolation
 
   ---|---|
   x1 |y1 |
@@ -27,11 +30,8 @@ npm i simple-linear-interpolation --save
   ---|---|
   x2 |y2 |
   ---|---|
-```
+*/
 
-Simple using way, JavaScript / TypeScript
-
-```typescript
 import { linearInterpolation } from "simple-linear-interpolation";
 
 const points = [{ x: 1, y: 1}, { x: 2, y: 2 }];
