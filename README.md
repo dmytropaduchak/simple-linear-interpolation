@@ -19,19 +19,7 @@ npm i simple-linear-interpolation --save
 
 Simple example JavaScript / TypeScript:
 
-```typescript
-
-/* Linear Interpolation
-
-  ---|---|
-  x1 |y1 |
-  ---|---|
-   x | y |
-  ---|---|
-  x2 |y2 |
-  ---|---|
-*/
-
+```JavaScript
 import { linearInterpolation } from "simple-linear-interpolation";
 
 const points = [{ x: 1, y: 1}, { x: 2, y: 2 }];

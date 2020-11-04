@@ -1,6 +1,6 @@
 {
   "name": "simple-linear-interpolation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple linear interpolation module that construct new data points within the range of a discrete set of known data points",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
