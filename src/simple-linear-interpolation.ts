@@ -7,7 +7,7 @@ const MATRIX_LENGTH = 2;
  * @param {array} points interpolation matrix data
  * @return {function} interpolation execute function
  */
-export function linerInterpolation(points: LinearInterpolationPoint[]): LinearInterpolationFunction {
+export function linearInterpolation(points: LinearInterpolationPoint[]): LinearInterpolationFunction {
   if (points.length <= MATRIX_LENGTH - 1) {
     throw new Error("Can't calculate linear interpolation, please provide more points");
   }

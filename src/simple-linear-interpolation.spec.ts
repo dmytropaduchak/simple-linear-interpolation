@@ -1,4 +1,4 @@
-import { linerInterpolation } from './simple-linear-interpolation';
+import { linearInterpolation } from './simple-linear-interpolation';
 import { LinearInterpolationPoint } from './simple-linear-interpolation.definition';
 
 describe('src/simple-linear-interpolation.ts', () => {
@@ -9,67 +9,67 @@ describe('src/simple-linear-interpolation.ts', () => {
 
   it('should do extrapolation `x` variable by parameters equal matrix data', () => {
     const params = { x: 2 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(2);
   });
 
   it('should do extrapolation `x` variable by parameters between matrix data', () => {
     const params = { x: 1.5 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(1.5);
   });
 
   it('should do extrapolation `y` variable by parameters equal matrix data', () => {
     const params = { y: 2 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(2);
   });
 
   it('should do extrapolation `y` variable by parameters between matrix data', () => {
     const params = { y: 1.5 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(1.5);
   });
 
   it('should do left extrapolation `x` variable', () => {
     const params = { x: -1.5 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(-1.5);
   });
 
   it('should do left extrapolation `y` variable', () => {
     const params = { y: -1.5 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(-1.5);
   });
 
   it('should do right extrapolation `x` variable', () => {
     const params = { x: 3 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(3);
   });
 
   it('should do right extrapolation `y` variable', () => {
     const params = { y: 3 };
-    const calculator = linerInterpolation(points);
+    const calculator = linearInterpolation(points);
     expect(calculator(params)).toEqual(3);
   });
 
   it('should throw extrapolation error if incorrect matrix data', () => {
     expect(() => {
-      linerInterpolation([{ x: 1, y: 1 }])({ x: 1.5 });
+      linearInterpolation([{ x: 1, y: 1 }])({ x: 1.5 });
     }).toThrowError("Can't calculate linear interpolation, please provide more points");
   });
 
   it('should throw extrapolation error if if incorrect value of `x` or `y`', () => {
     expect(() => {
-      linerInterpolation(points)({ z: 1.5 } as any);
+      linearInterpolation(points)({ z: 1.5 } as any);
     }).toThrowError("Can't calculate linear interpolation");
   });
 
   it('should throw extrapolation error if incorrect matrix value', () => {
     expect(() => {
-      linerInterpolation([{ a: 1 }, { b: 2 }] as any)({ x: 1.5 });
+      linearInterpolation([{ a: 1 }, { b: 2 }] as any)({ x: 1.5 });
     }).toThrowError("Can't calculate linear interpolation");
   });
 });
