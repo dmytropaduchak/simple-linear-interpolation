@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/dmytropaduchak/simple-linear-interpolation.svg?branch=master)](https://travis-ci.org/dmytropaduchak/simple-linear-interpolation)
 [![Coverage Status](https://coveralls.io/repos/github/dmytropaduchak/simple-linear-interpolation/badge.svg?branch=master)](https://coveralls.io/github/dmytropaduchak/simple-linear-interpolation?branch=master)
-[![NPM Version](https://badge.fury.io/js/simple-interpolation.svg)](http://badge.fury.io/js/simple-linear-interpolation)simple-linear-interpolation?type=dev)  
+[![NPM Version](https://badge.fury.io/js/simple-linear-interpolation.svg)](http://badge.fury.io/js/simple-linear-interpolation?type=dev)  
 
 # Simple Linear Interpolation
 
