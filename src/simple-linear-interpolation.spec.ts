@@ -81,7 +81,7 @@ describe('src/simple-linear-interpolation.ts', () => {
     it('should do right extrapolation `x` variable', () => {
       const params = { x: 0 };
       const calculator = linearInterpolation([
-        { x: 0.5, y: 0.5 },
+        { x: -1, y: -1 },
         { x: 1, y: 1 },
       ]);
       expect(calculator(params)).toEqual(0);
