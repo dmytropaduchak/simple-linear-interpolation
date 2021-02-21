@@ -2,6 +2,8 @@ import { LinearInterpolationFunction, LinearInterpolationPoint } from './simple-
 
 const MATRIX_LENGTH = 2;
 
+const isZero = (num: number): boolean => num === 0;
+
 /**
  * Implementation of linear interpolation
  * @param {array} points interpolation matrix data
@@ -24,7 +26,7 @@ export function linearInterpolation(points: LinearInterpolationPoint[]): LinearI
       coordinates = points.sort((a, b) => a.y - b.y).map((i) => [i.y, i.x]);
     }
 
-    if (!coordinate) {
+    if (!coordinate && !isZero(coordinate)) {
       throw new Error("Can't calculate linear interpolation");
     }
 

@@ -61,15 +61,39 @@ describe('src/simple-linear-interpolation.ts', () => {
     }).toThrowError("Can't calculate linear interpolation, please provide more points");
   });
 
-  it('should throw extrapolation error if if incorrect value of `x` or `y`', () => {
+  it('should throw extrapolation error if incorrect value of `x` or `y`', () => {
     expect(() => {
-      linearInterpolation(points)({ z: 1.5 } as any);
+      const params = { z: 1.5 } as any;
+      const calculator = linearInterpolation(points);
+      calculator(params);
     }).toThrowError("Can't calculate linear interpolation");
   });
 
   it('should throw extrapolation error if incorrect matrix value', () => {
     expect(() => {
-      linearInterpolation([{ a: 1 }, { b: 2 }] as any)({ x: 1.5 });
+      const params = { x: 1.5 };
+      const calculate = linearInterpolation([{ a: 1 }, { b: 2 }] as any);
+      calculate(params);
     }).toThrowError("Can't calculate linear interpolation");
+  });
+
+  describe('zero calculation', () => {
+    it('should do right extrapolation `x` variable', () => {
+      const params = { x: 0 };
+      const calculator = linearInterpolation([
+        { x: 0.5, y: 0.5 },
+        { x: 1, y: 1 },
+      ]);
+      expect(calculator(params)).toEqual(0);
+    });
+
+    it('should do right extrapolation `x` variable by parameters equal matrix data', () => {
+      const params = { x: 0 };
+      const calculator = linearInterpolation([
+        { x: 0, y: 0 },
+        { x: 1, y: 1 },
+      ]);
+      expect(calculator(params)).toEqual(0);
+    });
   });
 });
